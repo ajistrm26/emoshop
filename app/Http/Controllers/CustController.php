@@ -89,7 +89,7 @@ class CustController extends Controller
                 $jual = \App\Jual::where('id_user', Auth::user()->id)->orderBy('tgl_jual','desc')->first();
 
                 if(empty($jual)){
-                    $var = 'J'.date('Ydm').'000000';
+                    $var = 'J'.date('Ydm').Auth::user()->id.'000000';
                 }else{
                     $var = $jual->id_jual;
                 }
